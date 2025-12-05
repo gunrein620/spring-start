@@ -19,13 +19,16 @@ repositories {
 }
 
 dependencies {
+	// 1. 웹 개발 필수템 (이게 있어야 함)
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
-	testImplementation 'org.springframework.boot:spring-boot-starter-thymeleaf-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+
+	// 2. 테스트 종합 선물세트 (이게 없어서 에러난 거임)
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// 3. 최신 버전용 시동키 (아까 추가한 것 유지)
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
-
 tasks.named('test') {
 	useJUnitPlatform()
 }
